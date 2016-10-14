@@ -16,16 +16,17 @@
 
 // ** MySQL 設定 - 您可以從主機服務提供商獲取相關資訊。 ** //
 /** WordPress 的資料庫名稱，請更改 "database_name_here" */
-define('DB_NAME', 'dda47fskcp1rp3');
+$db = parse_url($_ENV["postgres://ynfmrptxbgvxtb:AiVIiC37NqMxofanCaYkZjCEsr@ec2-54-83-31-65.compute-1.amazonaws.com:5432/dda47fskcp1rp3"]);
+define('DB_NAME', trim($db["path"],'/'));
 
 /** MySQL 資料庫使用者名稱，請更改 "username_here" */
-define('DB_USER', 'ynfmrptxbgvxtb');
+define('DB_USER', $db["user"]);
 
 /** MySQL 資料庫密碼，請更改 "password_here" */
-define('DB_PASSWORD', 'AiVIiC37NqMxofanCaYkZjCEsr');
+define('DB_PASSWORD',  $db["pass"]);
 
 /** MySQL 主機位址 */
-define('DB_HOST', 'ec2-54-83-31-65.compute-1.amazonaws.com:5432');
+define('DB_HOST', $db["host"]);
 
 /** 建立資料表時預設的文字編碼 */
 define('DB_CHARSET', 'utf8');
@@ -112,4 +113,3 @@ if ( !defined('ABSPATH') )
 
 /** 設定 WordPress 變數和包含的檔案。 */
 require_once(ABSPATH . 'wp-settings.php');
-$db = parse_url($_ENV["DATABASE_URL"] ? $_ENV["DATABASE_URL"] : "postgres://ynfmrptxbgvxtb:AiVIiC37NqMxofanCaYkZjCEsr@ec2-54-83-31-65.compute-1.amazonaws.com:5432/dda47fskcp1rp3");
