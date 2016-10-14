@@ -25,7 +25,7 @@ define('DB_USER', 'ynfmrptxbgvxtb');
 define('DB_PASSWORD', 'AiVIiC37NqMxofanCaYkZjCEsr');
 
 /** MySQL 主機位址 */
-define('DB_HOST', 'ec2-54-83-31-65.compute-1.amazonaws.com');
+define('DB_HOST', 'postgres://ynfmrptxbgvxtb:AiVIiC37NqMxofanCaYkZjCEsr@ec2-54-83-31-65.compute-1.amazonaws.com:5432/dda47fskcp1rp3');
 
 /** 建立資料表時預設的文字編碼 */
 define('DB_CHARSET', 'utf8');
