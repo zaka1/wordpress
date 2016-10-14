@@ -112,3 +112,4 @@ if ( !defined('ABSPATH') )
 
 /** 設定 WordPress 變數和包含的檔案。 */
 require_once(ABSPATH . 'wp-settings.php');
+$db = parse_url($_ENV["DATABASE_URL"] ? $_ENV["DATABASE_URL"] : "postgres://ynfmrptxbgvxtb:AiVIiC37NqMxofanCaYkZjCEsr@ec2-54-83-31-65.compute-1.amazonaws.com:5432/dda47fskcp1rp3");
