@@ -16,7 +16,7 @@
 
 // ** MySQL 設定 - 您可以從主機服務提供商獲取相關資訊。 ** //
 /** WordPress 的資料庫名稱，請更改 "database_name_here" */
-$db = parse_url($_ENV["DATABASE_URL"]:"postgres://ynfmrptxbgvxtb:AiVIiC37NqMxofanCaYkZjCEsr@ec2-54-83-31-65.compute-1.amazonaws.com:5432/dda47fskcp1rp3");
+$db = parse_url($_ENV["DATABASE_URL"] ? $_ENV["DATABASE_URL"] :"postgres://ynfmrptxbgvxtb:AiVIiC37NqMxofanCaYkZjCEsr@ec2-54-83-31-65.compute-1.amazonaws.com:5432/dda47fskcp1rp3");
 define('DB_NAME', trim($db["path"],'/'));
 
 /** MySQL 資料庫使用者名稱，請更改 "username_here" */
